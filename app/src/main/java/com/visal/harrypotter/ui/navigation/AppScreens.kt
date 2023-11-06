@@ -14,4 +14,6 @@ sealed class AppScreens(val route:String) {
     object hogwartsStudentsScreen :AppScreens(route = Routes.HOGWARTS_STUDENTS_SCREEN)
     object allSpellsScreen :AppScreens(route = Routes.ALL_SPELLS_SCREEN)
     object charDetailScreen :AppScreens(route = Routes.CHARACTER_DETAIL_SCREEN)
+    object houseScreen :AppScreens(route = Routes.HOUSE_SCREEN)
+    object houseCharactersScreen :AppScreens(route = Routes.HOUSE_CHARACTERS_SCREEN)
 }

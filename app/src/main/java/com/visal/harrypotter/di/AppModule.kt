@@ -6,6 +6,7 @@ import com.visal.harrypotter.data.api.AllCharactersApiService
 import com.visal.harrypotter.data.api.AllSpellsApiService
 import com.visal.harrypotter.data.api.HogwartsStaffApiService
 import com.visal.harrypotter.data.api.HogwartsStudentsApiService
+import com.visal.harrypotter.data.api.HouseCharactersApiService
 import com.visal.harrypotter.data.datasource.AllCharactersDataSource
 import com.visal.harrypotter.data.datasource.AllCharactersSourceImpl
 import com.visal.harrypotter.data.datasource.AllSpellsDataSource
@@ -14,10 +15,13 @@ import com.visal.harrypotter.data.datasource.HogwartsStaffDataSource
 import com.visal.harrypotter.data.datasource.HogwartsStaffDataSourceImpl
 import com.visal.harrypotter.data.datasource.HogwartsStudentsDataSource
 import com.visal.harrypotter.data.datasource.HogwartsStudentsDataSourceImpl
+import com.visal.harrypotter.data.datasource.HouseCharactersDataSource
+import com.visal.harrypotter.data.datasource.HouseCharactersSourceImpl
 import com.visal.harrypotter.data.repository.AllCharactersRepository
 import com.visal.harrypotter.data.repository.AllSpellsRepository
 import com.visal.harrypotter.data.repository.HogwartsStaffRepository
 import com.visal.harrypotter.data.repository.HogwartsStudentsRepository
+import com.visal.harrypotter.data.repository.HouseCharactersRepository
 import com.visal.harrypotter.ui.common.util.AppConstant
 import dagger.Module
 import dagger.Provides
@@ -233,6 +237,48 @@ class AppModule {
     fun providesAllSpellsRepository(allSpellsDataSource: AllSpellsDataSource): AllSpellsRepository {
         // Create and return an instance of AllSpellsRepository using the provided data source
         return AllSpellsRepository(allSpellsDataSource)
+    }
+
+    //All Hoouse Characters
+    /**
+     * Provides an instance of the AllCharactersApiService using the provided Retrofit instance.
+     *
+     * @param retrofit The Retrofit instance for creating the API service.
+     * @return The configured HouseCharactersApiService instance.
+     */
+    @Provides
+    @Singleton
+    fun providesAllHouseCharactersApiService(retrofit: Retrofit): HouseCharactersApiService {
+        // Create and return an instance of HouseCharactersApiService using Retrofit
+        return retrofit.create(HouseCharactersApiService::class.java)
+    }
+
+
+    /**
+     * Provides an instance of the HouseCharactersDataSource by utilizing the provided HouseCharactersApiService.
+     *
+     * @param apiService The HouseCharactersApiService used to interact with the API.
+     * @return The configured HouseCharactersDataSource instance.
+     */
+    @Provides
+    @Singleton
+    fun providesHouseCharactersDataSource(apiService: HouseCharactersApiService): HouseCharactersDataSource {
+        // Create and return an instance of HouseCharactersDataSource using the provided API service
+        return HouseCharactersSourceImpl(apiService)
+    }
+
+
+    /**
+     * Provides an instance of the HouseCharactersRepository by utilizing the provided HouseCharactersDataSource.
+     *
+     * @param dataSource The HouseCharactersDataSource used for retrieving character data.
+     * @return The configured HouseCharactersRepository instance.
+     */
+    @Provides
+    @Singleton
+    fun providesHouseCharactersRepository(dataSource: HouseCharactersDataSource): HouseCharactersRepository {
+        // Create and return an instance of HouseCharactersRepository using the provided data source
+        return HouseCharactersRepository(dataSource)
     }
 
 

@@ -81,6 +81,9 @@ fun MenuListComponent(
             MenuBox(viewModel.menuList[3], onClick = {
                 navController.navigate(route = AppScreens.allSpellsScreen.route)
             })
+            MenuBox(viewModel.menuList[4], onClick = {
+                navController.navigate(route = AppScreens.houseScreen.route)
+            })
 
         }
     }

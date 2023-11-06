@@ -6,12 +6,15 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.visal.harrypotter.data.model.House
 import com.visal.harrypotter.data.model.HpCharacter
 import com.visal.harrypotter.ui.common.util.AppConstant
 import com.visal.harrypotter.ui.navigation.screens.allcharacters.AllCharactersScreen
 import com.visal.harrypotter.ui.navigation.screens.allspells.AllSpellsScreen
 import com.visal.harrypotter.ui.navigation.screens.characterdetails.CharacterDetailScreen
 import com.visal.harrypotter.ui.navigation.screens.home.HomeScreen
+import com.visal.harrypotter.ui.navigation.screens.housecharacters.HouseCharactersScreen
+import com.visal.harrypotter.ui.navigation.screens.housecharacters.HouseScreen
 import com.visal.harrypotter.ui.navigation.screens.splash.SplashScreen
 
 
@@ -89,7 +92,28 @@ fun AppNavigationGraph(
                     onThemeUpdated = onThemeUpdated // Pass the callback for theme updates
                 )
             }
-
+        }
+        composable(Routes.HOUSE_SCREEN) {
+            HouseScreen(
+                navController = navController,
+                darkTheme = darkTheme,
+                onThemeUpdated = onThemeUpdated
+            )
+        }
+        composable(Routes.HOUSE_CHARACTERS_SCREEN) {
+            // Pass the selected house object argument to CharacterDetailScreen
+            val hpCharacter =
+                navController.previousBackStackEntry?.savedStateHandle?.get<House>(AppConstant.HOUSE_ID)
+            // Check if house is not null
+            hpCharacter?.let { it1 ->
+                // If house is not null, navigate to the HouseCharactersScreen composable
+                HouseCharactersScreen(
+                    navController = navController, // Pass the navigation controller
+                    house = it1, // Pass the retrieved Harry Potter character object
+                    darkTheme = darkTheme, // Pass the dark theme configuration
+                    onThemeUpdated = onThemeUpdated // Pass the callback for theme updates
+                )
+            }
         }
     }
 }

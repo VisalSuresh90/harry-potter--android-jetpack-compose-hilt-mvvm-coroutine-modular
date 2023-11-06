@@ -39,7 +39,8 @@ class HomeViewModel @Inject constructor() :
             name = " Hogwarts Staff",
             image = "https://images4.alphacoders.com/556/556449.jpg"
         ),
-        HomeMenu(name = " All Spells", image = "https://images4.alphacoders.com/962/96278.jpg")
+        HomeMenu(name = "All Spells", image = "https://images4.alphacoders.com/962/96278.jpg"),
+        HomeMenu(name = "Houses", image = "https://keepthescore.com/static/images/blog_images/hogwarts-houses.jpg")
     )
 
     // LiveData to observe the current value
