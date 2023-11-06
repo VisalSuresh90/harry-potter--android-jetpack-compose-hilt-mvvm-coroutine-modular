@@ -16,6 +16,10 @@ An Android application that allows users to explore the magical world of Harry P
 
 5. **Character Details**: Get detailed information about each character, including their background and magical abilities.
 
+6. **Houses**: Learn about the four houses at Hogwarts, including Gryffindor, Slytherin, Hufflepuff, and Ravenclaw. Discover the unique qualities and characteristics of each house and the famous wizards and witches associated with them.
+
+
+
 ## Project Structure
 
 The project is organized into modular components for a clean and maintainable codebase:
@@ -27,6 +31,11 @@ The project is organized into modular components for a clean and maintainable co
 - **di**: Hilt dependency injection setup.
 - **util**: Utility classes and extensions.
 - **theme**: Dark and light theme configuration.
+
+## API Reference
+For the magical data powering this app, we extend our heartfelt thanks to the [Harry Potter API](https://hp-api.onrender.com). This app would not be possible without the rich source of information it provides.
+
+Thanks and Credits: We express our gratitude to the creators and maintainers of the Harry Potter API for their fantastic work, making it possible to bring the wizarding world to life in this app. 🪄✨
 
 ## Code Comments
 
@@ -50,6 +59,8 @@ This project emphasizes code readability and maintainability. All functions and 
 ![Screenshot 1](images/all-char-dark.png)
 ![Screenshot 1](images/char-det-dark.png)
 ![Screenshot 1](images/spell-dark.png)
+![Screenshot 1](images/houses.png)
+![Screenshot 1](images/houses-dark.png)
 
 ## Contributing
 
