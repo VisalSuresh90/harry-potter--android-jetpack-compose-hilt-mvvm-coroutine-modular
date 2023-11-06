@@ -54,11 +54,11 @@ This project emphasizes code readability and maintainability. All functions and 
 ![Screenshot 1](images/home.png)
 ![Screenshot 1](images/all-char.png)
 ![Screenshot 1](images/char-det.png)
-![Screenshot 1](images/spell.png)
+![Screenshot 1](images/spells.png)
 ![Screenshot 1](images/home-dark.png)
 ![Screenshot 1](images/all-char-dark.png)
 ![Screenshot 1](images/char-det-dark.png)
-![Screenshot 1](images/spell-dark.png)
+![Screenshot 1](images/spells-dark.png)
 ![Screenshot 1](images/houses.png)
 ![Screenshot 1](images/houses-dark.png)
 
