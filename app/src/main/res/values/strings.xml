@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Harry Potter</string>
+
+    <string name="back">Back</string>
+    <string name="search">Search</string>
+    <string name="clear_search_text_content_desc">Clear search text</string>
+    <string name="not_available">Not Available</string>
+    <string name="actor">Actor </string>
+    <string name="dob">Date of Birth </string>
+    <string name="all_characters">All Characters</string>
+    <string name="hogwarts_students">Hogwarts Students</string>
+    <string name="hogwarts_staffs">Hogwarts Staffs</string>
+    <string name="all_spells">All Spells</string>
+</resources>
