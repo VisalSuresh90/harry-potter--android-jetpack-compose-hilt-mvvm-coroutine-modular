@@ -12,7 +12,7 @@ import com.visal.harrypotter.ui.navigation.screens.allcharacters.AllCharactersSc
 import com.visal.harrypotter.ui.navigation.screens.allspells.AllSpellsScreen
 import com.visal.harrypotter.ui.navigation.screens.characterdetails.CharacterDetailScreen
 import com.visal.harrypotter.ui.navigation.screens.home.HomeScreen
-
+import com.visal.harrypotter.ui.navigation.screens.splash.SplashScreen
 
 
 /**
@@ -29,7 +29,16 @@ fun AppNavigationGraph(
     darkTheme: Boolean,
     onThemeUpdated: () -> Unit
 ) {
-    NavHost(navController = navController, startDestination = Routes.HOME_SCREEN) {
+    NavHost(navController = navController, startDestination = Routes.SPLASH_SCREEN) {
+        composable(Routes.SPLASH_SCREEN) {
+            // Define a composable route for the HOME_SCREEN
+            SplashScreen(
+               durationMillis = 2000,
+                navigateToMain = {
+                    navController.navigate(route = AppScreens.homeScreen.route)
+                }
+            )
+        }
         composable(Routes.HOME_SCREEN) {
             // Define a composable route for the HOME_SCREEN
             HomeScreen(

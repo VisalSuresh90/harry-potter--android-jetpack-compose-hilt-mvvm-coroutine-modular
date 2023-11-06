@@ -100,6 +100,7 @@ private fun ImagesBox(
         viewModel.startUpdatingValue(5000L)
     }
     ImageBox(url = currentImage)
+
 }
 
 

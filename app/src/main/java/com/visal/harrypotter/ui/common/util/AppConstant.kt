@@ -9,4 +9,7 @@ object AppConstant {
 
     const val NO_IMAGE_AVAILABLE_URL =// URL for a placeholder image when no image is available
         "https://cdn.pnghd.pics/data/753/no-image-available-png-6.jpg"
+
+    const val SPLASH_IMAGE_URL =// URL for a splash screen
+        "https://images5.alphacoders.com/133/1331710.png"
 }

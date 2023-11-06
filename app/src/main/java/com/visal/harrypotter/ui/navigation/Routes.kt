@@ -5,6 +5,7 @@ package com.visal.harrypotter.ui.navigation
  */
 object Routes {
     // Define constant route values for each screen
+    const val SPLASH_SCREEN ="SPLASH"
     const val HOME_SCREEN ="HOME"
     const val ALL_CHARACTERS_SCREEN ="ALL-CHARACTERS"
     const val HOGWARTS_STUDENTS_SCREEN ="HOGWARTS-STUDENTS-SCREEN"
